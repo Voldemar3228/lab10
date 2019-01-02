@@ -1,0 +1,52 @@
+<%= form_tag  url_for(controller: :proxy, action: :output), method: 'get' do %>
+  <h2>Вычисление квадратного корня методом Ньютона- Рафсона</h2>
+  <div class="form-group">
+    <h3>Введите число:</h3>
+  </div>
+
+  <div class="form-group">
+    <%= text_field_tag :num, nil, class: 'form-control' %>
+  </div>
+
+  <fieldset class="form-group">
+
+    <legend>Выбор стороны рендеринга</legend>
+
+    <div class="form-check">
+
+      <label class="form-check-label">
+
+        <input type="radio" class="form-check-input" name="side" value="server" id="server-side" checked>
+        Рендеринг на стороне сервера этого приложения
+
+      </label>
+
+    </div>
+
+    <div class="form-check">
+
+      <label class="form-check-label">
+
+        <input type="radio" class="form-check-input" name="side" value="client" id="client-side">
+        Отображение XML на стороне браузера
+
+      </label>
+
+    </div>
+
+    <div class="form-check">
+
+      <label class="form-check-label">
+
+        <input type="radio" class="form-check-input" name="side" value="client-with-xslt" id="client-side-xslt">
+        Рендеринг на стороне браузера с помощью XSLT
+
+      </label>
+
+    </div>
+
+  </fieldset>
+
+  <%= submit_tag 'Send', class: 'btn btn-primary' %>
+
+<% end %>
